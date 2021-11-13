@@ -37,21 +37,21 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        nom_v1 = new javax.swing.JTextField();
+        rnom = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        cant_v1 = new javax.swing.JSpinner();
+        rspin = new javax.swing.JSpinner();
         jButton8 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        ruser = new javax.swing.JTextField();
+        rcon = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        rper = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        rcuen = new javax.swing.JTextField();
+        Rrad = new javax.swing.JRadioButton();
+        rrvend = new javax.swing.JRadioButton();
+        rrcom = new javax.swing.JRadioButton();
         admin = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -146,6 +146,12 @@ public class Main extends javax.swing.JFrame {
         Registro.setMinimumSize(new java.awt.Dimension(448, 355));
         Registro.setPreferredSize(new java.awt.Dimension(448, 355));
 
+        jTabbedPane1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jTabbedPane1ComponentShown(evt);
+            }
+        });
+
         jLabel28.setText("Nombre:");
 
         jLabel30.setText("Usuario:");
@@ -154,7 +160,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel34.setText("Edad:");
 
-        cant_v1.setModel(new javax.swing.SpinnerNumberModel(18, 18, 60, 1));
+        rspin.setModel(new javax.swing.SpinnerNumberModel(18, 18, 60, 1));
 
         jButton8.setText("Crear");
         jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,15 +169,26 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        ruser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ruserActionPerformed(evt);
+            }
+        });
+
         jLabel35.setText("Personaje Favorito:");
 
         jLabel36.setText("Cuenta Bancaria:");
 
-        jRadioButton1.setText("Administrador");
+        Rrad.setText("Administrador");
 
-        jRadioButton2.setText("Vendedor");
+        rrvend.setText("Vendedor");
+        rrvend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rrvendActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("Comprador");
+        rrcom.setText("Comprador");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -187,36 +204,36 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jLabel28)
                                     .addGap(214, 214, 214))
                                 .addGroup(jPanel10Layout.createSequentialGroup()
-                                    .addComponent(nom_v1)
+                                    .addComponent(rnom)
                                     .addGap(148, 148, 148)))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel32)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rcon, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel35))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rper, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cant_v1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rspin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel34)
                                             .addComponent(jLabel30)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(ruser, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rcuen, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1))
+                            .addComponent(rrcom, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rrvend, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rrad))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(169, 169, 169)
@@ -232,30 +249,30 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel30))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nom_v1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ruser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(jLabel34))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cant_v1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rspin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(jLabel36))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rcuen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
-                .addComponent(jRadioButton1)
+                .addComponent(Rrad)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton2)
+                .addComponent(rrvend)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton3)
+                .addComponent(rrcom)
                 .addGap(27, 27, 27)
                 .addComponent(jButton8)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -1181,8 +1198,34 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cboxItemStateChanged
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-       
+       String nombre=rnom.getText(),usuario=ruser.getText(),contraseña=rcon.getText();
+          int edad=(int) rspin.getValue();
+           String cuenta = rcuen.getSelectedText(), personaje = rper.getSelectedText();
+          if (Rrad.isSelected()) {
+            usuarios.add(new Admin(nombre,edad,usuario,contraseña));
+        }else if(rrvend.isSelected()){
+            ArrayList<videojuegos> c1=new ArrayList();
+             ArrayList<videojuegos> v2=new ArrayList();
+            usuarios.add(new vendedor(nombre,edad,usuario,contraseña,cuenta,personaje,0, 0, c1, v2));
+        }else if(rrcom.isSelected()){
+            ArrayList<videojuegos> v2=new ArrayList();
+             int saldo = 2000 + r.nextInt(10000);
+       int dinero = 200 + r.nextInt(800);
+            usuarios.add(new comprador(nombre,edad,usuario,contraseña,v2,saldo, dinero,cuenta,personaje)); 
+        }
     }//GEN-LAST:event_jButton8MouseClicked
+
+    private void ruserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ruserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ruserActionPerformed
+
+    private void jTabbedPane1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTabbedPane1ComponentShown
+
+    }//GEN-LAST:event_jTabbedPane1ComponentShown
+
+    private void rrvendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rrvendActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rrvendActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1223,11 +1266,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Comprador;
     private javax.swing.JPanel Editar1;
     private javax.swing.JDialog Registro;
+    private javax.swing.JRadioButton Rrad;
     private javax.swing.JDialog Vendedor;
     private javax.swing.JDialog admin;
     private javax.swing.JSpinner año_v;
     private javax.swing.JSpinner cant_v;
-    private javax.swing.JSpinner cant_v1;
     private javax.swing.JComboBox<String> cbox;
     private javax.swing.JSpinner coms;
     private javax.swing.JTextField con;
@@ -1289,9 +1332,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1302,13 +1342,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel labcom;
     private javax.swing.JLabel labcom1;
     private javax.swing.JLabel labcom2;
@@ -1323,8 +1359,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel nom;
     private javax.swing.JLabel nom1;
     private javax.swing.JTextField nom_v;
-    private javax.swing.JTextField nom_v1;
     private javax.swing.JSpinner pre_v;
+    private javax.swing.JTextField rcon;
+    private javax.swing.JTextField rcuen;
+    private javax.swing.JTextField rnom;
+    private javax.swing.JTextField rper;
+    private javax.swing.JRadioButton rrcom;
+    private javax.swing.JRadioButton rrvend;
+    private javax.swing.JSpinner rspin;
+    private javax.swing.JTextField ruser;
     private javax.swing.JSpinner spin;
     private javax.swing.JTabbedPane tab;
     private javax.swing.JTabbedPane tab1;
