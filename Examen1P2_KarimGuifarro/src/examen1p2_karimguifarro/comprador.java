@@ -19,15 +19,16 @@ public class comprador extends Usuarios {
 
     public comprador() {
     }
-
-    public comprador(String nombre, String usuario, String contraseña, int edad,ArrayList juegos, int dinero, int saldo, String cuenta, String personajefav) {
-        super(nombre, usuario, contraseña, edad);
+    public comprador(String nombre, int edad, String usuario, String contraseña,ArrayList<videojuegos> juegos, int dinero, int saldo, String cuenta, String personajefav) {
+        super(nombre, edad, usuario, contraseña);
         this.juegos = juegos;
         this.dinero = dinero;
         this.saldo = saldo;
         this.cuenta = cuenta;
         this.personajefav = personajefav;
     }
+
+    
 
     public ArrayList getJuegos() {
         return juegos;

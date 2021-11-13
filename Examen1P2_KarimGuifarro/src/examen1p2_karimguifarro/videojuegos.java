@@ -11,13 +11,16 @@ package examen1p2_karimguifarro;
  */
 public class videojuegos {
     String nombre;
-    int precio;
+    int precio,año_lanzamiento,cantidad;
 
-    public videojuegos(String nombre, int precio) {
+    public videojuegos(String nombre, int precio, int año_lanzamiento, int cantidad) {
         this.nombre = nombre;
         this.precio = precio;
+        this.año_lanzamiento = año_lanzamiento;
+        this.cantidad = cantidad;
     }
 
+    
     public String getNombre() {
         return nombre;
     }
@@ -34,9 +37,28 @@ public class videojuegos {
         this.precio = precio;
     }
 
+    public int getAño_lanzamiento() {
+        return año_lanzamiento;
+    }
+
+    public void setAño_lanzamiento(int año_lanzamiento) {
+        this.año_lanzamiento = año_lanzamiento;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     @Override
     public String toString() {
-        return "nombre=" + nombre + ", precio=" + precio + '}';
+        return " " + nombre + " " + precio + " " + año_lanzamiento + " " + cantidad;
     }
+
+  
+   
     
 }

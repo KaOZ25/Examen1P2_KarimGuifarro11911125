@@ -19,8 +19,8 @@ public class vendedor extends Usuarios{
     public vendedor() {
     }
 
-    public vendedor(String nombre, String usuario, String contraseña, int edad,String cuenta, String personajefav, int estrellas, int dinero, ArrayList<videojuegos> jvendidos, ArrayList<videojuegos> jventa) {
-        super(nombre, usuario, contraseña, edad);
+    public vendedor(String nombre, int edad, String usuario, String contraseña,String cuenta, String personajefav, int estrellas, int dinero, ArrayList<videojuegos> jvendidos, ArrayList<videojuegos> jventa) {
+        super(nombre, edad, usuario, contraseña);
         this.cuenta = cuenta;
         this.personajefav = personajefav;
         this.estrellas = estrellas;
@@ -28,6 +28,8 @@ public class vendedor extends Usuarios{
         this.jvendidos = jvendidos;
         this.jventa = jventa;
     }
+    
+    
 
     public String getCuenta() {
         return cuenta;
